@@ -5,4 +5,11 @@
         <attr name="scaleItemCount" format="integer"/>
         <attr name="scaleWidth" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="IndicatorView">
+        <attr name="indicatorColor" format="color"/>
+        <attr name="indicatorColorSelected" format="color"/>
+        <attr name="indicatorWidth" format="integer"/>
+        <attr name="gravity" format="integer"/>
+    </declare-styleable>
 </resources>

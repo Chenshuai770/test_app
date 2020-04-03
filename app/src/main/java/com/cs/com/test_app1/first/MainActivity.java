@@ -1,5 +1,6 @@
 package com.cs.com.test_app1.first;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -24,7 +25,6 @@ import android.widget.Toast;
 
 import com.blankj.utilcode.util.KeyboardUtils;
 import com.cs.com.test_app1.R;
-import com.cs.com.test_app1.second.ScreenZentUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void initView() {
         inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         sharedPreferences = getSharedPreferences(EMOJIKEYBOARD, Context.MODE_PRIVATE);
@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mRecyclerView = (RecyclerView) findViewById(R.id.rlv_list);
         mEtInputMessage = (EditText) findViewById(R.id.et_inputMessage);
         mIvMore = (ImageView) findViewById(R.id.iv_more);
-        mLlPanelContent = (LinearLayout) findViewById(R.id.ll_panel_content);
-        mLlRootEmojiPanel = (LinearLayout) findViewById(R.id.ll_rootEmojiPanel);
+        mLlPanelContent = (LinearLayout) findViewById(R.id.ll_panel_content);//里面的布局
+        mLlRootEmojiPanel = (LinearLayout) findViewById(R.id.ll_rootEmojiPanel);//整个viewpage的布局
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         for (int i = 0; i < 30; i++) {

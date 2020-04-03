@@ -77,7 +77,7 @@ public class SecondActivity extends AppCompatActivity {
         mData.add(new User("……%￥#￥%#"));
 
         Collections.sort(mData); // 对mData进行排序，需要让User实现Comparable接口重写compareTo方法
-        
+
         adapter.notifyDataSetChanged();
 
 
